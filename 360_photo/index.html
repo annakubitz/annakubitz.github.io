@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<title>Kubitz 360 Photo</title>
+	<script src="js/aframe-master.1.0.4.min.js"></script>
+    <script src="https://unpkg.com/aframe-event-set-component@3.0.3/dist/aframe-event-set-component.min.js"></script>
+</head>
+
+<body>
+<a-scene antialias="true">
+	
+	<a-assets>
+		<img id="sky" src="images/clouds.jpg" crossorigin="anonymous" />
+        <img id="outerworld" src="images/outerworld.jpg" crossorigin="anonymous" />
+        <img id="planet2" src="images/planet_2.jpg" crossorigin="anonymous" />
+        <img id="planet3" src="images/planet.jpg" crossorigin="anonymous" />
+		<img id="ground" src="images/cloudtexture.jpg" crossorigin="anonymous" />
+		<img id="moon" src="images/moon.jpg" crossorigin="anonymous" />
+        <img id="sun" src="images/solar.jpg" crossorigin="anonymous" />
+        <img id="earth" src="images/earth.jpg" crossorigin="anonymous" />
+		<img id="earth" src="images/earth-sphere.jpg" crossorigin="anonymous" />
+        <img id="bg" src="images/bg.JPG" crossorigin="anonymous" />
+        <img id="space" src="images/space_360.jpg" crossorigin="anonymous" />
+		<img id="hexagons" src="images/hexagons.png" crossorigin="anonymous" />
+        <img id="cobble" src="images/cobble.jpg" crossorigin="anonymous" />
+        <img id="diamond" src="images/diamond.png" crossorigin="anonymous" />
+        <img id="sign1" src="images/sign1.jpg" crossorigin="anonymous" />
+        <img id="sign2" src="images/sign2.jpg" crossorigin="anonymous" />
+        <img id="sign3" src="images/sign3.jpg" crossorigin="anonymous" />
+        <img id="sign4" src="images/sign4.jpg" crossorigin="anonymous" />
+    
+	</a-assets>
+		
+	<a-sky 
+		color = "#FFFFFF"
+		material = "src: #sky">
+	</a-sky>
+
+	<a-plane
+		width="100" height="100"
+		position=" 0.00 0.00 0.00" 
+		rotation="-90 0 0" 
+		color="#888888" 
+		material="src: #ground; repeat:10 10; transparent: true; opacity: 0.75"
+		shadow="cast: false; receive: true">
+	</a-plane>
+	
+	<a-sphere
+		width = "1" height = "1" depth = "1"
+		position = "4 5 5"
+		rotation = "2 45 0"  
+		color = "#FFFFFF"
+		material = "src: #moon"
+		shadow = "cast: true; receive: true"
+            event-set__enter="_event: mouseenter; _target: a-sky; material.src: #planet2" >
+	</a-sphere>
+    
+    <a-box
+        width = "2" height = "1" depth = "0.01"
+		position = "4 3 5"
+		rotation = "2 45 0"  
+		color = "#FFFFFF"
+		material = "src: #sign1"
+		shadow = "cast: true; receive: true">
+    </a-box>
+    
+    <a-sphere
+		width = "1" height = "1" depth = "1"
+		position = "-3 5 -5"
+		rotation = "0 45 0"  
+		color = "#FFFFFF"
+		material = "src: #sun"
+		shadow = "cast: true; receive: true"
+              event-set__enter="_event: mouseenter; _target: a-sky; material.src: #outerworld">
+	</a-sphere>
+    
+    <a-box
+        width = "2" height = "1" depth = "0.01"
+		position = "-3 3 -5"
+		rotation = "2 80 0"  
+		color = "#FFFFFF"
+		material = "src: #sign3"
+		shadow = "cast: true; receive: true">
+    </a-box>
+    
+    <a-sphere
+		width = "1" height = "1" depth = "1"
+		position = "5 5 -3"
+		rotation = "0 45 0"  
+		color = "#FFFFFF"
+		material = "src: #earth"
+		shadow = "cast: true; receive: true"
+              event-set__enter="_event: mouseenter; _target: a-sky; material.src: #bg">
+	</a-sphere>
+    
+    <a-box
+        width = "2" height = "1" depth = "0.01"
+		position = "5 3 -3"
+		rotation = "0 100 0"  
+		color = "#FFFFFF"
+		material = "src: #sign4"
+		shadow = "cast: true; receive: true">
+    </a-box>
+    
+    
+    
+    <a-sphere
+		width = "1" height = "1" depth = "1"
+		position = "-4 5 5"
+		rotation = "0 45 0"  
+		color = "#FFFFFF"
+		material = "src: #planet3"
+		shadow = "cast: true; receive: true"
+              event-set__enter="_event: mouseenter; _target: a-sky; material.src: #space">
+	</a-sphere>
+    
+    <a-box
+        width = "2" height = "1" depth = "0.01"
+		position = "-4 3 5"
+		rotation = "2 0 0"  
+		color = "#FFFFFF"
+		material = "src: #sign2"
+		shadow = "cast: true; receive: true">
+    </a-box>
+    
+     
+    <a-camera>
+        <a-cursor></a-cursor>
+    </a-camera>	
+	
+</a-scene>
+</body>
+</html>
